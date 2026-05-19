@@ -2,7 +2,7 @@
 
 **A hybrid classical/quantum ML database that tells you what natural and pharmaceutical drugs can fight a specific disease.**
 
-Built as part of Stanford CS229 (Machine Learning) by **Dr. Elden Wayne Whalen III, ShD**.
+Built as part of Stanford CS229 (Machine Learning) by **Dr. Elden Wayne Whalen III, ShD**. https://quantum-ethno-pharma.onrender.com/
 
 ---
 
@@ -42,7 +42,5 @@ Natural products continue to inspire a massive portion of modern pharmaceuticals
 git clone https://github.com/wayneeffect/quantum-ethnobotany-pharma.git
 cd quantum-ethnobotany-pharma
 pip install -r requirements.txt
-
-https://quantum-ethno-pharma.onrender.com/
 cp .env.example .env
 streamlit run app.py
