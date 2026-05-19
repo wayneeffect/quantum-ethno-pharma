@@ -42,5 +42,7 @@ Natural products continue to inspire a massive portion of modern pharmaceuticals
 git clone https://github.com/wayneeffect/quantum-ethnobotany-pharma.git
 cd quantum-ethnobotany-pharma
 pip install -r requirements.txt
+
+https://quantum-ethno-pharma.onrender.com/
 cp .env.example .env
 streamlit run app.py
