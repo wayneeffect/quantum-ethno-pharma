@@ -5,21 +5,20 @@ import numpy as np
 
 class DataLoader:
     def __init__(self):
-        """Initialize and load the expanded database"""
+        """Initialize the expanded ethnobotany database"""
         self.df = self.load_expanded_database()
-        self.compounds = self.df  # For compatibility with hybrid_recommender.py
+        self.compounds = self.df   # Important for hybrid_recommender.py compatibility
     
     def load_expanded_database(self):
-        """Load expanded ethnobotany + pharmaceutical database"""
+        """Expanded database with 15+ high-quality entries"""
         data = [
-            # === HIGH-IMPACT NATURAL PRODUCTS ===
             {"name": "Curcumin", "source": "Turmeric (Curcuma longa)", "smiles": "OC1=CC=C(C=C1)C=CC(=O)C2=CC(=C(C=C2)O)O", 
              "modalities": ["Anti-inflammatory", "Antioxidant", "Anticancer"], 
              "disease_associations": ["Type 2 Diabetes", "Inflammation", "Arthritis"], 
              "evidence": "High", "combined_score": 0.92},
             
             {"name": "Resveratrol", "source": "Japanese Knotweed, Grapes", "smiles": "OC1=CC=C(C=C1)C=CC2=CC(=CC(=C2)O)O", 
-             "modalities": ["Antioxidant", "Cardioprotective", "Anti-aging"], 
+             "modalities": ["Antioxidant", "Cardioprotective"], 
              "disease_associations": ["Type 2 Diabetes", "Cardiovascular"], 
              "evidence": "High", "combined_score": 0.88},
             
@@ -28,7 +27,7 @@ class DataLoader:
              "disease_associations": ["Malaria"], "evidence": "Very High", "combined_score": 0.95},
             
             {"name": "Quercetin", "source": "Onions, Apples, Capers", "smiles": "OC1=CC(=C2C(=C1)OC(=C(C2=O)O)C3=CC=C(C=C3)O)O", 
-             "modalities": ["Anti-inflammatory", "Antioxidant", "Antihistamine"], 
+             "modalities": ["Anti-inflammatory", "Antioxidant"], 
              "disease_associations": ["Inflammation", "Allergies"], "evidence": "High", "combined_score": 0.85},
             
             {"name": "Berberine", "source": "Goldenseal, Barberry", "smiles": "COc1cc2c(cc1OC)c3c4c(c5c6c(cc(c6[nH]c5c4[nH]c3c2)OC)OC)OC", 
@@ -36,12 +35,7 @@ class DataLoader:
              "disease_associations": ["Type 2 Diabetes"], "evidence": "High", "combined_score": 0.89},
             
             {"name": "Ginsenoside Rg1", "source": "Panax Ginseng", "smiles": "CC1(C)C(CCC2(C)C1CCC3C2(C)CCC4C3(C)CCC(O4)C5(C)OC(C(O)C(O)C5O)O)C(O)C(O)C(O)C(O)CO", 
-             "modalities": ["Antidiabetic", "Adaptogenic", "Anti-inflammatory"], 
-             "disease_associations": ["Type 2 Diabetes", "Fatigue"], "evidence": "High", "combined_score": 0.87},
+             "modalities": ["Antidiabetic", "Adaptogenic"], 
+             "disease_associations": ["Type 2 Diabetes"], "evidence": "High", "combined_score": 0.87},
             
-            {"name": "Andrographolide", "source": "Andrographis paniculata", "smiles": "CC1(C)C2CCC3C(C)(C)C(O)CCC3(C)C2C(=C)C(=O)OC1", 
-             "modalities": ["Antimalarial", "Anti-inflammatory"], 
-             "disease_associations": ["Malaria", "Inflammation"], "evidence": "High", "combined_score": 0.84},
-            
-            {"name": "Boswellic Acid", "source": "Frankincense (Boswellia serrata)", "smiles": "CC1(C)C2CCC3C(C)(C)C(O)CCC3(C)C2C(=C)C(=O)OC1", 
-             "modalities": ["
+            {"name": "Andrographolide", "source": "Andrographis paniculata", "sm
