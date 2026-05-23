@@ -1,9 +1,11 @@
 # data_loader.py
 import pandas as pd
 import os
+import numpy as np
 
 class DataLoader:
     def __init__(self):
+        """Initialize and load the expanded database"""
         self.df = self.load_expanded_database()
         self.compounds = self.df  # For compatibility with hybrid_recommender.py
     
@@ -25,4 +27,21 @@ class DataLoader:
              "modalities": ["Antimalarial"], 
              "disease_associations": ["Malaria"], "evidence": "Very High", "combined_score": 0.95},
             
-            {"name": "Quercetin", "source": "Onions, Apples, Capers", "smiles": "OC1=CC(=C2C(=C1)OC(=C(C2=O)O)C3
+            {"name": "Quercetin", "source": "Onions, Apples, Capers", "smiles": "OC1=CC(=C2C(=C1)OC(=C(C2=O)O)C3=CC=C(C=C3)O)O", 
+             "modalities": ["Anti-inflammatory", "Antioxidant", "Antihistamine"], 
+             "disease_associations": ["Inflammation", "Allergies"], "evidence": "High", "combined_score": 0.85},
+            
+            {"name": "Berberine", "source": "Goldenseal, Barberry", "smiles": "COc1cc2c(cc1OC)c3c4c(c5c6c(cc(c6[nH]c5c4[nH]c3c2)OC)OC)OC", 
+             "modalities": ["Antidiabetic", "Antimicrobial"], 
+             "disease_associations": ["Type 2 Diabetes"], "evidence": "High", "combined_score": 0.89},
+            
+            {"name": "Ginsenoside Rg1", "source": "Panax Ginseng", "smiles": "CC1(C)C(CCC2(C)C1CCC3C2(C)CCC4C3(C)CCC(O4)C5(C)OC(C(O)C(O)C5O)O)C(O)C(O)C(O)C(O)CO", 
+             "modalities": ["Antidiabetic", "Adaptogenic", "Anti-inflammatory"], 
+             "disease_associations": ["Type 2 Diabetes", "Fatigue"], "evidence": "High", "combined_score": 0.87},
+            
+            {"name": "Andrographolide", "source": "Andrographis paniculata", "smiles": "CC1(C)C2CCC3C(C)(C)C(O)CCC3(C)C2C(=C)C(=O)OC1", 
+             "modalities": ["Antimalarial", "Anti-inflammatory"], 
+             "disease_associations": ["Malaria", "Inflammation"], "evidence": "High", "combined_score": 0.84},
+            
+            {"name": "Boswellic Acid", "source": "Frankincense (Boswellia serrata)", "smiles": "CC1(C)C2CCC3C(C)(C)C(O)CCC3(C)C2C(=C)C(=O)OC1", 
+             "modalities": ["
