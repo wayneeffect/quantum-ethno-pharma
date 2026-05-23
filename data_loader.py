@@ -5,12 +5,10 @@ import numpy as np
 
 class DataLoader:
     def __init__(self):
-        """Initialize the expanded ethnobotany database"""
         self.df = self.load_expanded_database()
-        self.compounds = self.df   # Important for hybrid_recommender compatibility
+        self.compounds = self.df
     
     def load_expanded_database(self):
-        """Expanded ethnobotany + pharmaceutical database"""
         data = [
             {"name": "Curcumin", "source": "Turmeric (Curcuma longa)", 
              "smiles": "OC1=CC=C(C=C1)C=CC(=O)C2=CC(=C(C=C2)O)O", 
@@ -64,14 +62,12 @@ class DataLoader:
              "modalities": ["Anti-inflammatory", "Analgesic"], 
              "disease_associations": ["Inflammation", "Pain"], "evidence": "Very High", "combined_score": 0.91},
         ]
-        
         return pd.DataFrame(data)
     
     def featurize(self, smiles_list):
-        """Dummy featurizer"""
         return np.random.rand(len(smiles_list), 64)
 
 
 def save_database(df, path="database/expanded_ethno_pharma.json"):
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    df.to_json(path, orient="records", indent
+    df.to_json(path, orient="records", indent=2)
