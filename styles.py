@@ -1,6 +1,6 @@
 # styles.py
 def apply_quantum_theme():
-    """Apply Jungle / Ethnobotany Theme"""
+    """Apply Jungle / Ethnobotany Theme for Quantum Ethno-Pharma"""
     
     css = """
     <style>
@@ -55,11 +55,6 @@ def apply_quantum_theme():
             color: #e8f5e9;
         }
         
-        /* Slider */
-        .stSlider .stSliderTickBar {
-            color: #86efac;
-        }
-        
         /* Metrics */
         .stMetric {
             background: rgba(74, 222, 128, 0.12);
@@ -73,6 +68,26 @@ def apply_quantum_theme():
             border-right: 3px solid #4ade80;
         }
         
-        /* Quantum / Jungle Glow */
+        /* Jungle Glow */
         .quantum-title {
-            text-shadow: 0 0 20
+            text-shadow: 0 0 20px #4ade80,
+                         0 0 35px #22c55e;
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#4ade80, #22c55e);
+            border-radius: 10px;
+        }
+        
+        hr {
+            border-color: rgba(74, 222, 128, 0.3);
+        }
+    </style>
+    """
+    
+    return css
