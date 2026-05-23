@@ -9,6 +9,7 @@ class DataLoader:
         self.compounds = self.df
     
     def load_expanded_database(self):
+        """Expanded ethnobotany + pharmaceutical database"""
         data = [
             {"name": "Curcumin", "source": "Turmeric (Curcuma longa)", 
              "smiles": "OC1=CC=C(C=C1)C=CC(=O)C2=CC(=C(C=C2)O)O", 
@@ -48,26 +49,4 @@ class DataLoader:
              "disease_associations": ["Malaria", "Inflammation"], "evidence": "High", "combined_score": 0.84},
             
             {"name": "Boswellic Acid", "source": "Frankincense (Boswellia serrata)", 
-             "smiles": "CC1(C)C2CCC3C(C)(C)C(O)CCC3(C)C2C(=C)C(=O)OC1", 
-             "modalities": ["Anti-inflammatory"], 
-             "disease_associations": ["Arthritis", "Inflammation"], "evidence": "High", "combined_score": 0.88},
-            
-            {"name": "Metformin", "source": "Synthetic (Biguanide)", 
-             "smiles": "CN(C)C(=N)N=C(N)N", 
-             "modalities": ["Antidiabetic"], 
-             "disease_associations": ["Type 2 Diabetes"], "evidence": "Very High", "combined_score": 0.94},
-            
-            {"name": "Aspirin", "source": "Synthetic (from Willow Bark)", 
-             "smiles": "CC(=O)OC1=CC=CC=C1C(=O)O", 
-             "modalities": ["Anti-inflammatory", "Analgesic"], 
-             "disease_associations": ["Inflammation", "Pain"], "evidence": "Very High", "combined_score": 0.91},
-        ]
-        return pd.DataFrame(data)
-    
-    def featurize(self, smiles_list):
-        return np.random.rand(len(smiles_list), 64)
-
-
-def save_database(df, path="database/expanded_ethno_pharma.json"):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    df.to_json(path, orient="records", indent=2)
+             "smiles": "CC1
